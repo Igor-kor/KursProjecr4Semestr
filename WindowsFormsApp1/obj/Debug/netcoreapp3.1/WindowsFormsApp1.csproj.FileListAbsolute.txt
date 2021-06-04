@@ -1,0 +1,15 @@
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.exe
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.deps.json
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.runtimeconfig.json
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.runtimeconfig.dev.json
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.dll
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.pdb
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.Form1.resources
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.AssemblyInfoInputs.cache
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.AssemblyInfo.cs
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.dll
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.pdb
+D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.genruntimeconfig.cache
