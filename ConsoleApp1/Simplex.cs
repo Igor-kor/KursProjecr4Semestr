@@ -6,7 +6,6 @@ namespace ConsoleApp1
 {
     public class Simplex
     {
-
         //source - симплекс таблица без базисных переменных
         double[,] table; //симплекс таблица
 
@@ -66,7 +65,16 @@ namespace ConsoleApp1
                         new_table[i, j] = table[i, j] - table[i, mainCol] * new_table[mainRow, j];
                 }
                 table = new_table;
+
+                Console.WriteLine("Шаг:");
+                for (int i = 0; i < table.GetLength(0); i++)
+                {
+                    for (int j = 0; j < table.GetLength(1); j++)
+                        Console.Write(table[i, j] + " ");
+                    Console.WriteLine();
+                }
             }
+
 
             //заносим в result найденные значения X
             for (int i = 0; i < result.Length; i++)
@@ -81,7 +89,53 @@ namespace ConsoleApp1
             return table;
         }
 
-        // все ли меньше 0
+        //result - в этот массив будут записаны полученные значения X
+        public double[,] Calculate2(double[] result)
+        {
+            int mainCol, mainRow; //ведущие столбец и строка
+
+            while (!IsItEnd2())
+            {
+                mainCol = findMainCol();
+                mainRow = findMainRow(mainCol);
+                basis[mainRow] = mainCol;
+
+                double[,] new_table = new double[m, n];
+
+                for (int j = 0; j < n; j++)
+                    new_table[mainRow, j] = table[mainRow, j] / table[mainRow, mainCol];
+
+                for (int i = 0; i < m; i++)
+                {
+                    if (i == mainRow)
+                        continue;
+
+                    for (int j = 0; j < n; j++)
+                        new_table[i, j] = table[i, j] - table[i, mainCol] * new_table[mainRow, j];
+                }
+                table = new_table;
+                Console.WriteLine("Шаг2:");
+                for (int i = 0; i < table.GetLength(0); i++)
+                {
+                    for (int j = 0; j < table.GetLength(1); j++)
+                        Console.Write(table[i, j] + " ");
+                    Console.WriteLine();
+                }
+            }
+
+
+            //заносим в result найденные значения X
+            for (int i = 0; i < result.Length; i++)
+            {
+                int k = basis.IndexOf(i + 1);
+                if (k != -1)
+                    result[i] = table[k, 0];
+                else
+                    result[i] = 0;
+            }
+
+            return table;
+        }
         private bool IsItEnd()
         {
             bool flag = true;
@@ -98,7 +152,22 @@ namespace ConsoleApp1
             return flag;
         }
 
-        // нахождение главной колонки
+        private bool IsItEnd2()
+        {
+            bool flag = true;
+
+            for (int j = 1; j < n; j++)
+            {
+                if (table[m - 1, j] > 0)
+                {
+                    flag = false;
+                    break;
+                }
+            }
+
+            return flag;
+        }
+
         private int findMainCol()
         {
             int mainCol = 1;
@@ -110,7 +179,6 @@ namespace ConsoleApp1
             return mainCol;
         }
 
-        // нахождение главной строки
         private int findMainRow(int mainCol)
         {
             int mainRow = 0;
