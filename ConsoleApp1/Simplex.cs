@@ -94,22 +94,39 @@ namespace ConsoleApp1
         {
             int mainCol, mainRow; //ведущие столбец и строка
 
+            n = 8;
+            double[,] new_table1 = new double[m, n];
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    new_table1[i, j] = table[i, j];
+                }
+            }
+            table = new_table1;
+
             while (!IsItEnd2())
             {
-                mainCol = findMainCol();
-                mainRow = findMainRow(mainCol);
+                mainCol = findMainCol2();
+                mainRow = findMainRow2(mainCol);
                 basis[mainRow] = mainCol;
+                Console.WriteLine("mainCol:" + mainCol);
+                Console.WriteLine("mainRow:" + mainRow);
 
                 double[,] new_table = new double[m, n];
 
+
+                /*НЭ = СЭ - (А*В)/РЭ
+СТЭ - элемент старого плана, РЭ - разрешающий элемент (6), А и В - элементы старого плана, образующие прямоугольник с элементами СТЭ и РЭ.
+                */
+
+                double re = table[mainRow, mainCol];
                 for (int j = 0; j < n; j++)
-                    new_table[mainRow, j] = table[mainRow, j] / table[mainRow, mainCol];
+                    new_table[mainRow, j] = table[mainRow, j] / re;
 
                 for (int i = 0; i < m; i++)
                 {
-                    if (i == mainRow)
-                        continue;
-
+                    if (i == mainRow) continue;
                     for (int j = 0; j < n; j++)
                         new_table[i, j] = table[i, j] - table[i, mainCol] * new_table[mainRow, j];
                 }
@@ -193,6 +210,31 @@ namespace ConsoleApp1
             for (int i = mainRow + 1; i < m - 1; i++)
                 if ((table[i, mainCol] > 0) && ((table[i, 0] / table[i, mainCol]) < (table[mainRow, 0] / table[mainRow, mainCol])))
                     mainRow = i;
+
+            return mainRow;
+        }
+
+        //находим наибольший 
+        private int findMainCol2()
+        {
+            int mainCol = 1;
+
+            for (int j = 2; j < n; j++)
+                if (table[m - 1, j] > table[m - 1, mainCol])
+                    mainCol = j;
+
+            return mainCol;
+        }
+
+        private int findMainRow2(int mainCol)
+        {
+            int mainRow = 0;
+
+            for (int i = 0; i < m - 1; i++)
+                if (table[i, mainCol] > table[mainRow, mainCol])
+                {
+                    mainRow = i; 
+                } 
 
             return mainRow;
         }
