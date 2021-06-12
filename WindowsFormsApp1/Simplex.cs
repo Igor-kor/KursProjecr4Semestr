@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -11,12 +12,17 @@ namespace WindowsFormsApp1
 
         int m, n, tempn;
 
+        int step = 0;
+
+        RichTextBox outtext;
+
         List<int> basis; //список базисных переменных
 
-        public Simplex(double[,] source)
+        public Simplex(double[,] source, RichTextBox outtext)
         {
             m = source.GetLength(0);
             n = source.GetLength(1);
+            this.outtext = outtext;
             tempn = source.GetLength(1);
             table = new double[m, n + m - 1];
             basis = new List<int>();
@@ -67,12 +73,12 @@ namespace WindowsFormsApp1
                 }
                 table = new_table;
 
-                Console.WriteLine("Шаг:");
+                outtext.Text += "Шаг:" + step++ + "\n";
                 for (int i = 0; i < table.GetLength(0); i++)
                 {
                     for (int j = 0; j < table.GetLength(1); j++)
-                        Console.Write(table[i, j] + " ");
-                    Console.WriteLine();
+                        outtext.Text += Math.Round(table[i, j], 2) + " ";
+                    outtext.Text += "\n";
                 }
             }
 
@@ -88,7 +94,7 @@ namespace WindowsFormsApp1
             }
 
             double[,] table2 = new double[m, tempn];
-           
+
             for (int i = 0; i < m; i++)
             {
                 for (int j = 0; j < tempn; j++)
@@ -112,9 +118,7 @@ namespace WindowsFormsApp1
             {
                 mainCol = findMainCol2();
                 mainRow = findMainRow2(mainCol);
-                basis[mainRow] = mainCol;
-                Console.WriteLine("mainCol:" + mainCol);
-                Console.WriteLine("mainRow:" + mainRow);
+                basis[mainRow] = mainCol; 
 
                 double[,] new_table = new double[m, n];
 
@@ -134,12 +138,12 @@ namespace WindowsFormsApp1
                         new_table[i, j] = table[i, j] - table[i, mainCol] * new_table[mainRow, j];
                 }
                 table = new_table;
-                Console.WriteLine("Шаг2:");
+                outtext.Text += "Шаг:" + step++ + "\n";
                 for (int i = 0; i < table.GetLength(0); i++)
                 {
                     for (int j = 0; j < table.GetLength(1); j++)
-                        Console.Write(table[i, j] + " ");
-                    Console.WriteLine();
+                        outtext.Text += Math.Round(table[i, j], 2) + " ";
+                    outtext.Text += "\n";
                 }
             }
 
