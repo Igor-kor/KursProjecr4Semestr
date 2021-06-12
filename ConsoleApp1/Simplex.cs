@@ -90,6 +90,7 @@ namespace ConsoleApp1
         }
 
         //result - в этот массив будут записаны полученные значения X
+        // для минимизации
         public double[,] Calculate2(double[] result)
         {
             int mainCol, mainRow; //ведущие столбец и строка
@@ -237,9 +238,7 @@ namespace ConsoleApp1
                 } 
 
             return mainRow;
-        }
-
-
+        } 
     }
 }
 
