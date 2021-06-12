@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
         //source - симплекс таблица без базисных переменных
         double[,] table; //симплекс таблица
 
-        int m, n;
+        int m, n, tempn;
 
         List<int> basis; //список базисных переменных
 
@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         {
             m = source.GetLength(0);
             n = source.GetLength(1);
+            tempn = source.GetLength(1);
             table = new double[m, n + m - 1];
             basis = new List<int>();
 
@@ -86,6 +87,18 @@ namespace WindowsFormsApp1
                     result[i] = 0;
             }
 
+            double[,] table2 = new double[m, tempn];
+           
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < tempn; j++)
+                {
+                    table2[i, j] = table[i, j];
+                    if (j == 0 && i == 3) table2[i, j] = 0;
+                }
+            }
+            table = table2;
+            n = table.GetLength(1);
             return table;
         }
 
@@ -94,17 +107,6 @@ namespace WindowsFormsApp1
         public double[,] Calculate2(double[] result)
         {
             int mainCol, mainRow; //ведущие столбец и строка
-
-            n = 8;
-            double[,] new_table1 = new double[m, n];
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    new_table1[i, j] = table[i, j];
-                }
-            }
-            table = new_table1;
 
             while (!IsItEnd2())
             {
