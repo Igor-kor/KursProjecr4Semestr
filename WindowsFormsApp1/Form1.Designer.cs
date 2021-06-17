@@ -30,15 +30,13 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 322);
+            this.button1.Location = new System.Drawing.Point(415, 289);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -48,38 +46,18 @@
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(150, 323);
+            this.richTextBox3.Location = new System.Drawing.Point(35, 333);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(306, 96);
+            this.richTextBox3.Size = new System.Drawing.Size(836, 182);
             this.richTextBox3.TabIndex = 4;
             this.richTextBox3.Text = "";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(500, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Добавить витамин";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(500, 363);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(259, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Добавить поливитаминный комплекс";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(35, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(678, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(836, 262);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.Text = "dataGridView1";
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -88,9 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 527);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(887, 527);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.button1);
@@ -106,8 +82,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

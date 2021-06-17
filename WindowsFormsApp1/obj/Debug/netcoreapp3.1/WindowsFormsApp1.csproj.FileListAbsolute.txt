@@ -13,4 +13,3 @@ D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\ne
 D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.dll
 D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.pdb
 D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.genruntimeconfig.cache
-D:\Desktop\working\source\4 semestr\mo\KursProject\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.Form2.resources
