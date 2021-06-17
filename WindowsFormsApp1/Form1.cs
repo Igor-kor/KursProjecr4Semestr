@@ -30,6 +30,11 @@ namespace WindowsFormsApp1
                     richTextBox1.Text += table[i, j] + " ";
                 richTextBox1.Text += "\n";
             }
+
+            dataGridView1.Columns.Add("col1","Название витамин/\nвитаминный комплекс");
+            dataGridView1.Columns.Add("col2","Поливитаминный комплекс 1");
+            dataGridView1.Columns.Add("col3","Всего необходимо");
+            dataGridView1.Rows.Add("Цена за 1 г. тыс. руб");
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
@@ -86,6 +91,30 @@ namespace WindowsFormsApp1
             {
                 richTextBox3.Text += "X[" + count++ + "] = " + res + "\n";
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.Rows.Add(form2.textBox1.Text);
+            } 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.Columns.Add(form2.textBox1.Text, form2.textBox1.Text); 
+            } 
+            dataGridView1.Columns[form2.textBox1.Text].DisplayIndex = dataGridView1.Columns.Count -2;
         }
     }
 }
